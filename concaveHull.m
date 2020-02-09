@@ -76,7 +76,7 @@ if(k >= 3 && size(points,1) > k)
             selPoint = points(i,:);
             interCheck = false; 
             for(c=1:1:size(concaveHull,1) - 1)
-                interCheck = checkIntersection(concaveHull(c,:),concaveHull(c + 1,:),actPoint,selPoint);
+                interCheck = checkIntersection(concaveHull(c,:),concaveHull(c + 1,:),actPoint,selPoint);%check if a candidate creates an intersection with an existing polygonhull
                     if(interCheck == true && selPoint(1) ~= concaveHull(1,1) && selPoint(2) ~= concaveHull(1,2))
                        break; 
                     end       
