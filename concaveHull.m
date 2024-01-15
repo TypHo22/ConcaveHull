@@ -31,6 +31,10 @@ function [concaveHull] = concaveHull(points,k)
 % concaveHull: mx2
 %% Andreas Bernatzky 07.02.2020
 %%
+%remove duplicate points, which can lead to issues
+[v, w] = unique( points, 'rows', 'stable');
+points = [points(w,1), points(w,2)]
+
 scatter(points(:,1),points(:,2));%for visualisation only
 hold on%for visualisation only
 title(sprintf('A k-nearest neighbours approach for the computation of the region occupied by a set of points\nSample of 280 points and k = 5'));%for visualisation only
