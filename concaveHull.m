@@ -33,7 +33,7 @@ function [concaveHull] = concaveHull(points,k)
 %%
 %remove duplicate points, which can lead to issues
 [v, w] = unique( points, 'rows', 'stable');
-points = [points(w,1), points(w,2)]
+points = [points(w,1), points(w,2)];
 
 scatter(points(:,1),points(:,2));%for visualisation only
 hold on%for visualisation only
